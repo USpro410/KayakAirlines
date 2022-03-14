@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Airlines | KAYAK</title>
+    <link href="style.css" rel="stylesheet" >
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+        $('.alliancetype').on('change', function(){
+            var alliancetype_list = [];
+            $('#filters :input:checked').each(function(){
+            var alliancetype = $(this).val();
+            alliancetype_list.push(alliancetype);
+            });
+        
+            if(alliancetype_list.length == 0)
+            $('.filteredresults').fadeIn();
+            else {
+            $('.filteredresults').each(function(){
+                var item = $(this).attr('data-tag');
+                if(jQuery.inArray(item,alliancetype_list) > -1)
+                $(this).fadeIn('slow');
+                else
+                $(this).hide();
+            });
+            }   
+        });
+        }); 
+    </script>
+    
+</head>
+<body>
+    <script>
+        $(document).ready(function() {
+            $.ajax({
+              url: 'https://kayak.com/h/mobileapis/directory/airlines/homework?callback=jsonp',
+              data: {
+                check: 'code'
+              },
+              jsonp:"jsonp",
+              dataType: 'jsonp',
+              success: function(result) {
+                console.log(result);
+              }
+            });
+          });
+    </script>
+
+    <div id="logo"><img src="images/logo.svg" alt="Kayak"></div>
+    <div class="wrap">
+            <h1>Airlines</h1>   
+             <h2>Filter by Alliances</h2>
+             <div id="filters">
+                <div class="filterblock">
+                      <input id="check1" type="checkbox" name="check" value="OW" class="alliancetype">
+                   <label for="check1">Oneworld</label>
+                </div>
+        
+                <div class="filterblock">
+                      <input id="check2" type="checkbox" name="check" value="ST" class="alliancetype">
+                   <label for="check2">Sky Team</label>
+                </div>
+        
+                <div class="filterblock">
+                      <input id="check3" type="checkbox" name="check" value="SA" class="alliancetype">
+                   <label for="check3">Star Alliance</label>
+                </div>
+            </div>
+
+            <div class="tile-design filteredresults" data-tag="OW">
+                <div id="airlinelogo"><img src="https://www.kayak.com/rimg/provider-logos/airlines/v/A9.png?crop=false&width=108&height=92&fallback=default3.png&_v=aecb9c03992ee98a5959c5503ebd75f0" alt="American Airlines"></div>
+                <div class="text">
+                    <span>American Airlines</span>
+                </div>
+                <p id="subheading">American Airlines (AA)</p>
+                <p>Oneworld</p>
+                <p>+1 800 433 7300 </p>
+                <p style="color: #5a6872;">https://www.AA.com</p>
+            </div>
+            <div class="tile-design filteredresults" data-tag="ST"> 
+                <div id="airlinelogo"><img src="https://www.kayak.com/rimg/provider-logos/airlines/v/DL.png?crop=false&width=108&height=92&fallback=default1.png&_v=02a9af26513d796d51e54147426d15b5" alt="Delta"></div>
+                <div class="text">
+                    <span>Delta</span>
+                </div>
+                <p id="subheading">Delta</p>
+                <p>Sky Team</p>
+                <p>+1 888 750 3284</p>
+                <p style="color: #5a6872;">https://www.delta.com</p>    
+            </div>
+            <div class="tile-design filteredresults">
+                <div id="airlinelogo"><img src="https://www.kayak.com/rimg/provider-logos/airlines/v/PS.png?crop=false&width=108&height=92&fallback=default2.png&_v=d9d949b58188e00fcfa02d4139ecbc2e" alt="UIA"></div>
+                <div class="text">
+                    <span>Ukraine International Airlines</span>
+                </div>
+                <p id="subheading">Ukraine International Airlines (UIA)</p>
+                <p>+38 (044) 581-50-50</p>
+                <p style="color: #5a6872;">https://flyUIA.com/ii/en/home</p>
+            </div>
+            <div class="tile-design filteredresults" data-tag="SA">
+                <div id="airlinelogo"><img src="https://www.kayak.com/rimg/provider-logos/airlines/v/EH.png?crop=false&width=108&height=92&fallback=default1.png&_v=62b4b9a45bf8b49cc47ef65707139fdf" alt="ANA"></div>
+                <div class="text">
+                    <span>ANA</span>
+                </div>
+                <p id="subheading">All Nippon Airways (ANA)</p>
+                <p>Star Alliance</p>
+                <p>+81 3 5757 4200</p>
+                <p style="color: #5a6872;">https://www.anawings.co.jp</p>    
+            </div>
+            <div class="tile-design filteredresults">
+                <div id="airlinelogo"><img src="https://www.kayak.com/rimg/provider-logos/airlines/v/EK.png?crop=false&width=108&height=92&fallback=default1.png&_v=c871d68692a355e7e426e7a7a41976ce" alt="Emirates"></div>
+                <div class="text">
+                    <span>Emirates</span>
+                </div>
+                <p id="subheading">Emirates</p>
+                <p>+971 600 555 555</p>
+                <p style="color: #5a6872;">https://www.emirates.com </p>   
+            </div>
+            <div class="tile-design filteredresults" data-tag="SA">
+                <div id="airlinelogo"><img src="https://www.kayak.com/rimg/provider-logos/airlines/v/LH.png?crop=false&width=108&height=92&fallback=default2.png&_v=a1e3a69579474969d2b123789717863f" alt="Lufthansa"></div>
+                <div class="text">
+                    <span>Lufthansa</span>
+                </div>
+                <p id="subheading">Lufthansa</p>
+                <p>Star Alliance</p>
+                <p>+49 69 86 799 799</p>
+                <p style="color: #5a6872;">https://www.lufthansa.com </p>   
+            </div>
+            <div class="tile-design filteredresults" data-tag="SA">
+                <div id="airlinelogo"><img src="https://www.kayak.com/rimg/provider-logos/airlines/v/SQ.png?crop=false&width=108&height=92&fallback=default3.png&_v=0ff33e55a8f21c7c3192f0394e8dfdb2" alt="Singapore Airlines"></div>
+                <div class="text">
+                    <span>Singapore Airlines</span>
+                </div>
+                <p id="subheading">Singapore Airlines</p>
+                <p>Star Alliance</p>
+                <p>+65 6223 8888</p>
+                <p style="color: #5a6872;">https://www.singaporeair.com</p>    
+            </div>
+            <div class="tile-design filteredresults">
+                <div id="airlinelogo"><img src="https://www.kayak.com/rimg/provider-logos/airlines/v/PS.png?crop=false&width=108&height=92&fallback=default2.png&_v=d9d949b58188e00fcfa02d4139ecbc2e" alt="UIA"></div>
+                <div class="text">
+                    <span>Ukraine International Airlines</span>
+                </div>
+                <p id="subheading">Ukraine International Airlines (UIA)</p>
+                <p>+38 (044) 581-50-50</p>
+                <p style="color: #5a6872;">https://flyUIA.com/ii/en/home</p>    
+            </div>
+            <div class="tile-design filteredresults" data-tag="OW">
+                <div id="airlinelogo"><img src="https://www.kayak.com/rimg/provider-logos/airlines/v/AY.png?crop=false&width=108&height=92&fallback=default2.png&_v=381727f16ff1a212dffe2239684e67ab" alt="Finnair"></div>
+                <div class="text">
+                    <span>Finnair</span>
+                </div>
+                <p id="subheading">Finnair</p>
+                <p>Oneworld</p>
+                <p>+358 600 140 140</p>
+                <p style="color: #5a6872;">https://www.finnair.com/int/gb/</p>
+            </div>
+            <div class="tile-design filteredresults" data-tag="OW">
+                <div id="airlinelogo"><img src="https://www.kayak.com/rimg/provider-logos/airlines/v/AS.png?crop=false&width=108&height=92&fallback=default2.png&_v=7e7c4110616a97db4d99676711cb7247" alt="Alaska Airlines"></div>
+                <div class="text">
+                <span>Alaska Airlines</span>
+                </div>
+                <p id="subheading">Alaska Airlines (AS)</p>
+                <p>Oneworld</p>
+                <p>+1 800 252 7522</p>
+                <p style="color: #5a6872;">https://www.alaskaair.com</p>
+            </div>
+            <div class="tile-design filteredresults">
+                <div id="airlinelogo"><img src="https://www.kayak.com/rimg/provider-logos/airlines/v/AV.png?crop=false&width=108&height=92&fallback=default2.png&_v=4b0e0000efbc54f535fc6b466987c6b0" alt="Avianca"></div>
+                <div class="text">
+                    <span>Avianca</span>
+                </div>
+                <p id="subheading">Avianca</p>
+                <p>+57 18000 953 434</p>
+                <p style="color: #5a6872;">https://www.avianca.com/us/en/</p>  
+            </div>
+            <div class="tile-design filteredresults" data-tag="SA">
+                <div id="airlinelogo"><img src="https://www.kayak.com/rimg/provider-logos/airlines/v/LX.png?crop=false&width=108&height=92&fallback=default3.png&_v=fa51cb755e76e9f221e488bb98999eeb" alt="Swiss"></div>
+                <div class="text">
+                    <span>Swiss</span>
+                </div>
+                <p id="subheading">Swiss</p>
+                <p>Star Alliance</p>
+                <p>+41 61 582 36 56</p>
+                <p style="color: #5a6872;">https://www.swiss.com</p>     
+            </div>
+
+    </div>  
+</body>
+</html>

@@ -1,0 +1,118 @@
+﻿body {
+	background-color: #FFFFFF;
+}	 
+
+#logo {
+	margin: 19px 0px 19px 16px;
+}
+
+.wrap {
+	overflow: hidden;
+	background-color: #F9FAFB;
+	margin-top: 19px;
+	padding-left: 94px;
+}
+
+h1 {
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	font-size: 44px;
+	font-weight: 900;
+	color: #000000;
+	padding-top: 67px;
+
+}
+
+h2 {
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	font-size: 16px;
+	font-weight: bold;
+	color: #192024;
+	padding-top: 73px;
+	padding-bottom: 23px;
+}
+
+h3 {
+	color: rgb(143, 21, 21);
+	-webkit-text-stroke: 1px black;
+	font-size: 25px;
+}
+
+.tile-design {
+   float: left;
+    width: 300px;
+    height: 240px;
+    background-color: #FFFFFF;
+	margin-right: 16px;
+	margin-bottom: 16px;
+	border-radius: 8px;
+	box-shadow: 0 -1px 4px 0 rgba(25,32,36,0.04),
+	0 3px 6px 0 rgba(25,32,36,0.16);
+	border: solid 1px #363F45;
+	
+	} 
+
+.tile-design img{
+	height:32px;
+	width: 32px;
+	
+
+	}
+.tile-design p {display:none;}
+.tile-design:hover p {
+	display:block;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	font-size: 14px;
+	font-weight: normal;
+	color: #192024;
+}
+
+.tile-design:hover span {
+	display: none;
+}
+
+.text{
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	font-size: 16px;
+	font-weight: bold;
+	color: #192024;
+	
+}	
+
+#subheading{
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	color: #192024;
+}
+
+#airlinelogo {
+	height: auto;
+	width: auto;
+	max-height: 50%; 
+    max-width: 50%; 
+   
+}
+
+input[type='checkbox'] {
+
+    width:20px;
+    height:20px;
+}
+
+.filterblock {
+	display: inline;
+	margin-right: 24px;
+}
+
+label {
+	display: inline-block;
+	position: relative;
+	padding-left: 10px;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	font-size: 14px;
+	font-weight: normal;
+	color: #192024;
+	margin-bottom: 56px;
+}
+
+
